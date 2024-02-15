@@ -16,11 +16,11 @@
   }
 }
 
-body {
+/* body {
   color: white;
   background: black
   
-}
+} */
 
 @layer utilities {
   .text-balance {

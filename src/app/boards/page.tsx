@@ -1,4 +1,4 @@
-import Card from "./components/Card"
+import BoardCard from "./components/BoardCard"
 
 export interface Board {
   title: string;
@@ -27,10 +27,10 @@ export default async function Boards() {
   console.log("HERE ARE BOARDS: ", boards)
 
   return (
-    <main>
+    <div className="flex gap-12">
       {boards.map((board: Board) => (
-          <Card board={board}/>
+          <BoardCard board={board}/>
       ))} 
-    </main>
+    </div>
   )
 }
