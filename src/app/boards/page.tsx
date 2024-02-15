@@ -27,7 +27,7 @@ export default async function Boards() {
   console.log("HERE ARE BOARDS: ", boards)
 
   return (
-    <div className="flex gap-12">
+    <div className="flex gap-12 pt-24 px-12 justify-center">
       {boards.map((board: Board) => (
           <BoardCard board={board}/>
       ))} 

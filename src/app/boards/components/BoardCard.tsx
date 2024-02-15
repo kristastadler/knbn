@@ -1,6 +1,6 @@
 import { Board } from "../page"
 import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardBody} from "@nextui-org/react";
 
 interface BoardCardProps {
     board: Board;
@@ -11,11 +11,11 @@ const BoardCard = (props: BoardCardProps) => {
     return (
         <Card className="max-w-[400px]">
             <CardHeader className="flex gap-3 ">
-                <p className="text-md">{board.title}</p>
+                <p className="text-2xl">{board.title}</p>
             </CardHeader>
-            <Divider/>
+
             <CardBody>
-                <p className="text-md">{board?.description}</p>
+                <p className="text-lg">{board?.description}</p>
             </CardBody>
         </Card>
     )
