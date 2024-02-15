@@ -1,3 +1,11 @@
+import Card from "./components/Card"
+
+export interface Board {
+  title: string;
+  description?: string;
+  privacy: string;
+}
+
 async function getData() {
   const res = await fetch('https://mysite-pf0e.onrender.com/boards/')
   // The return value is *not* serialized
@@ -10,13 +18,19 @@ async function getData() {
  
   return res.json()
 }
+
+
+
  
 export default async function Boards() {
-  const boards = await getData()
-  return <main>
-  {boards.map((board: {title: string, description?: string, privacy: string}) => (
-    <><p>{board.title}</p><p>{board.description}</p></>
-         
-            ))}
-  </main>
+ const boards = await getData()
+  console.log("HERE ARE BOARDS: ", boards)
+
+  return (
+    <main>
+      {boards.map((board: Board) => (
+          <Card board={board}/>
+      ))} 
+    </main>
+  )
 }
